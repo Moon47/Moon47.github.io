@@ -1,28 +1,64 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Hank Quinlan, Horrible Cop</title>
-    </head>
-    <body>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/cv">CV</a></li>
-                <li><a href="/blog">Blog</a></li>
-            </ul>
-        </nav>
-        <div class="container">
-            <div class="blurb">
-                <h1>Hi there, I'm Hank Quinlan!</h1>
-                <p>I'm best known as the horrible cop from <em>A Touch of Evil</em> Don't trust me. <a href="/about">Read more about my life...</a></p>
-            </div><!-- /.blurb -->
-        </div><!-- /.container -->
-        <footer>
-            <ul>
-                <li><a href="mailto:hankquinlanhub@gmail.com">email</a></li>
-                <li><a href="https://github.com/hankquinlan">github.com/hankquinlan</a></li>
-            </ul>
-        </footer>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MyWeb01</title>
+
+    <script>
+
+        window.onload = function (){
+            var allA = document.getElementsByTagName("a");
+
+            for(var i=0; i < allA.length; i++){
+                allA[i].onclick = function (){
+                    // alert("hello");
+                    var tr = this.parentNode.parentNode;
+
+                    // alert("确认删除吗?");
+                    if(confirm("确认删除"+allA[i].+"吗?")){
+                        tr.parentNode.removeChild(tr);
+                    }
+
+                    return false;
+                };
+            }
+
+        };
+
+    </script>
+
+</head>
+<body>
+
+    <table id="employeeTable">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Salary</th>
+            <th>&nbsp;</th>
+        </tr>
+        <tr>
+            <td>Tom</td>
+            <td>tom@tom.com</td>
+            <td>5000</td>
+            <td><a href="deleteEmp?id=001">Delete</a></td>
+        </tr>
+        <tr>
+            <td>Jerry</td>
+            <td>jerry@sohu.com</td>
+            <td>8000</td>
+            <td><a href="deleteEmp?id=002">Delete</a></td>
+        </tr>
+        <tr>
+            <td>Bob</td>
+            <td>bob@bob.com</td>
+            <td>10000</td>
+            <td><a href="deleteEmp?id=002">Delete</a></td>
+        </tr>
+    </table>
+
+    <div id="formDiv">
+
+    </div>
+</body>
 </html>
